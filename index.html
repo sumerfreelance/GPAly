@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>GPA Calculator</title>
+    <link rel="icon" href="./assets/logo.ico" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== WELCOME ANIMATION SCREEN ===== -->
+    <div id="welcomeScreen">
+        <div class="welcome-box">
+            <h1 class="line one">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Welcome to GPA Calculator
+            </h1>
+            <h2 class="line two">Calculate your GPA easily and accurately.</h2>
+            <h3 class="line three">
+                <i class="fa-solid fa-rocket"></i>
+                Let’s start calculating your GPA
+            </h3>
+        </div>
+    </div>
+
+    <!-- ===== MAIN APPLICATION (HIDDEN INITIALLY) ===== -->
+    <div id="app" class="hidden">
+        <div class="container">
+            <!-- SUBJECT COUNT -->
+            <div id="countSection">
+                <h2>
+                    <i class="fa-solid fa-book-open"></i>
+                    GPA Calculator
+                </h2>
+                <p>How many subjects do you have?</p>
+                <input type="number" id="subjectCount" min="1" placeholder="Enter number of subjects" />
+                <button onclick="createSubjects()">Continue</button>
+            </div>
+
+            <!-- SUBJECT INPUT -->
+            <div id="subjectsSection" class="hidden">
+                <h2 id="message">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </h2>
+                <form id="subjectsForm"></form>
+                <button onclick="calculateGPA()">Calculate GPA</button>
+            </div>
+
+            <!-- RESULT -->
+            <div id="resultSection" class="hidden">
+                <div class="transcript-header">
+                    <h2>
+                        <i class="fa-solid fa-file-lines"></i>
+                        Academic Transcript
+                    </h2>
+
+                    <button class="pdf-btn" onclick="downloadPDF()">
+                        <i class="fa-solid fa-download"></i>
+                        Download PDF
+                    </button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Credit</th>
+                            <th>Marks %</th>
+                            <th>Grade</th>
+                            <th>GPA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transcriptBody"></tbody>
+                </table>
+
+                <div class="gpa-box">
+                    <i class="fa-solid fa-bullseye"></i>
+                    Final GPA: <span id="finalGPA"></span>
+                </div>
+            </div>
+
+            <!-- ===== FEEDBACK SECTION ===== -->
+            <div class="feedback-section">
+                <h3>
+                    <i class="fa-solid fa-comment-dots"></i>
+                    Share Your Feedback
+                </h3>
+
+                <p>Your feedback helps us improve this GPA Calculator.</p>
+
+                <div class="feedback-buttons">
+                    <a href="https://forms.gle/n6USbix9sTrg9S7F6" target="_blank" class="feedback-btn">
+                        <i class="fa-brands fa-google"></i>
+                        Google Form
+                    </a>
+
+                    <a href="mailto:sumerfreelance@gmail.com?subject=GPA Calculator Feedback"
+                        class="feedback-btn secondary">
+                        <i class="fa-solid fa-envelope"></i>
+                        Email Feedback
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,460 @@
+/* ===== RESET & BOX MODEL FIX ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+}
+
+/* ===== WELCOME SCREEN ===== */
+#welcomeScreen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.welcome-box {
+    text-align: center;
+    color: #fff;
+}
+
+.line {
+    opacity: 0;
+    animation: fadeBlink 1.5s ease forwards;
+}
+
+.one {
+    font-size: 56px;
+    animation-delay: 0.5s;
+}
+
+.two {
+    font-size: 32px;
+    margin-top: 20px;
+    animation-delay: 2.5s;
+}
+
+.three {
+    font-size: 28px;
+    margin-top: 30px;
+    animation-delay: 4.5s;
+}
+
+@keyframes fadeBlink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ===== MAIN APP ===== */
+.hidden {
+    display: none;
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.container {
+    background: #fff;
+    width: 90%;
+    max-width: 900px;
+    max-height: 85vh;
+    /* KEY LINE */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+    /* KEY LINE */
+}
+
+/* Smooth scroll */
+.container {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar (optional) */
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #eef2ff;
+    border-radius: 10px;
+}
+
+/* ===== FORMS ===== */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+input,
+button {
+    width: 100%;
+    height: 48px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Input focus */
+input:focus {
+    border-color: #667eea;
+}
+
+/* Button styling */
+button {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #5a67d8;
+}
+
+.subject-row {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1.5fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #667eea;
+    color: white;
+}
+
+.gpa-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+i {
+    margin-right: 8px;
+    color: #667eea;
+}
+
+.welcome-box i {
+    color: inherit;
+    margin-right: 12px;
+}
+
+.gpa-box i {
+    color: #22c55e;
+}
+
+/* ===== TRANSCRIPT HEADER ===== */
+.transcript-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* ===== PDF BUTTON ===== */
+.pdf-btn {
+    width: auto;
+    padding: 10px 18px;
+    background: #667eea;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.pdf-btn:hover {
+    background: #5a67d8;
+}
+
+.pdf-btn i {
+    color: inherit;
+    margin-right: 12px;
+}
+
+/* ===== FEEDBACK SECTION ===== */
+.feedback-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.feedback-section h3 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.feedback-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.feedback-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.feedback-btn {
+    text-decoration: none;
+    padding: 10px 18px;
+    background: #667eea;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+}
+
+.feedback-btn:hover {
+    background: #5a67d8;
+}
+
+.feedback-btn.secondary {
+    background: #475569;
+}
+
+.feedback-btn.secondary:hover {
+    background: #334155;
+}
+
+
+/* ===================================================== */
+/* =============== RESPONSIVE DESIGN =================== */
+/* ===================================================== */
+
+/* ---------- Tablets & Small Laptops ---------- */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .one {
+        font-size: 46px;
+    }
+
+    .two {
+        font-size: 28px;
+    }
+
+    .three {
+        font-size: 24px;
+    }
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 768px) {
+    .container {
+        padding: 24px;
+    }
+
+    .subject-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .subject-row input:last-child {
+        grid-column: span 2;
+    }
+
+    .transcript-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .pdf-btn {
+        align-self: flex-end;
+    }
+}
+
+/* ---------- Mobile Devices ---------- */
+@media (max-width: 480px) {
+
+    /* Welcome Screen Text */
+    .one {
+        font-size: 34px;
+    }
+
+    .two {
+        font-size: 20px;
+    }
+
+    .three {
+        font-size: 18px;
+    }
+
+    /* Container */
+    .container {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    /* Inputs & Buttons */
+    input,
+    button {
+        height: 44px;
+        font-size: 15px;
+    }
+
+    /* Subject Row: Stack Vertically */
+    .subject-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    /* Transcript Table */
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    /* GPA Box */
+    .gpa-box {
+        font-size: 18px;
+    }
+
+    /* PDF Button */
+    .pdf-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ---------- Very Small Devices (≤ 360px) ---------- */
+@media (max-width: 360px) {
+    .one {
+        font-size: 30px;
+    }
+
+    .two {
+        font-size: 18px;
+    }
+
+    .three {
+        font-size: 16px;
+    }
+}
+
+/* ===================================================== */
+/* ===== iPhone 12 / 13 / 14 / Pro / Max FIX ============ */
+/* ===================================================== */
+
+/* iPhone range: 390px – 430px width */
+@media (min-width: 390px) and (max-width: 430px) {
+
+    /* Fix iOS vh issue */
+    #app {
+        min-height: 100svh;
+        /* iOS safe viewport height */
+        padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    }
+
+    .container {
+        margin: 0 auto;
+        max-height: 92svh;
+        /* more breathing room */
+        padding: 20px;
+    }
+
+    /* Inputs slightly tighter */
+    input,
+    button {
+        height: 44px;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    /* Welcome screen text balance */
+    .one {
+        font-size: 36px;
+    }
+
+    .two {
+        font-size: 22px;
+    }
+
+    .three {
+        font-size: 20px;
+    }
+
+    /* GPA box spacing */
+    .gpa-box {
+        font-size: 19px;
+        padding: 14px;
+    }
+}
