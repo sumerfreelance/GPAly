@@ -188,6 +188,3 @@ If you found this project helpful:
 * Submit feedback for improvements
 
 > *This project was built with a focus on learning, usability, and real-world academic needs.*
-
-
-Just tell me 😊
